@@ -42,8 +42,6 @@ const App = () => {
     copy.vote = copyVotes[maxVoteIndex]
 
     setMostVoted(copy)
-    console.log(mostVoted)
-    console.log(maxVoteIndex)
   }
 
   const getMaxVoteIndex = (copyVotes) => {
@@ -113,4 +111,5 @@ const MostVotedAnecdote = (props) => {
     </div>
   )
 }
+
 export default App
