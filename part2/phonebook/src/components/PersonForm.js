@@ -11,10 +11,16 @@ const PersonForm = (props) => {
             personService
                 .update(object.id, newObject)
                 .then(updatedPerson => {
-                    props.setPersons(props.persons.map(person => person.id === object.id ? updatedPerson : person))
+                    props.setPersons(props.persons.map(person => person.id === object.id ? updatedPerson : person));
+                    props.setErrorMessage(`${newObject.name} has been updated with new number: ${newObject.number}`)
+                    props.setMessageType('success')
+                    setTimeout(() => {
+                        props.setErrorMessage(null)
+                    }, 5000);
                 })
         }
     }
+
     const handleSubmit = (event) => {
         event.preventDefault();
 
@@ -33,6 +39,11 @@ const PersonForm = (props) => {
                 .then(person => props.setPersons(props.persons.concat(person)))
             props.setNewName('')
             props.setNewNumber('')
+            props.setErrorMessage(`${newPerson.name} has been added to server.`)
+            props.setMessageType('success')
+            setTimeout(() => {
+                props.setErrorMessage(null)
+            }, 5000);
         }
     }
 

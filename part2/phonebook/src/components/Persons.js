@@ -6,7 +6,7 @@ const Persons = ({ persons, filter, removePerson }) => {
                 return (
                     <div>
                         <ul>
-                            <li key={person.name} >
+                            <li key={person.id}>
                                 {person.name} {person.number} <button onClick={() => removePerson(person)}>Delete</button>
                             </li>
                         </ul>
@@ -19,7 +19,7 @@ const Persons = ({ persons, filter, removePerson }) => {
             return (
                 <div>
                     <ul>
-                        <li key={person.name} >
+                        <li key={person.id}>
                             {person.name} {person.number} <button onClick={() => removePerson(person)}>Delete</button>
                         </li>
                     </ul>
